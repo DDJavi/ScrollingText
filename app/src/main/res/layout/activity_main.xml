@@ -20,7 +20,7 @@
 
     <TextView
         android:id="@+id/article_subheading"
-        android:layout_width="match_parent"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/article_heading"
         android:padding="@dimen/padding_regular"
@@ -31,29 +31,40 @@
     <ScrollView
 
         android:id="@+id/scrollview"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/article_subheading"
-        android:layout_marginTop="1dp">
+        android:layout_below="@id/article_heading"
+        android:layout_toRightOf="@id/article_subheading">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-        <TextView
-            android:id="@+id/article"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:autoLink="web"
-            android:lineSpacingExtra="5sp"
-            android:text="@string/Article_text" />
 
-            <Button
-                android:id="@+id/button8"
+            <TextView
+                android:id="@+id/article"
                 android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:lineSpacingExtra="5sp"
+                android:text="@string/Article_text" />
+
+            <EditText
+                android:id="@+id/edit_article"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:lineSpacingExtra="5sp"
+                android:text="@string/Article_text"
+                android:visibility="gone" />
+            <Button
+                android:id="@+id/comment"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
                 android:layout_marginBottom="3dp"
-                android:text="@string/buttonAddComment" />
+                android:text="@string/buttonAddComment"
+                android:onClick="editText"/>
         </LinearLayout>
     </ScrollView>
 
